@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ animal.nome }} - Detalhes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .navbar {
+            background-color: #333;
+            padding: 10px 20px;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .navbar a:hover {
+            background-color: #555;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #444;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .animal-details img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .animal-details h1 {
+            margin: 0;
+            color: #333;
+        }
+        .animal-details p {
+            margin: 10px 0;
+        }
+        .animal-details strong {
+            color: #555;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="{% url 'lista_animais' %}">Lista de Animais</a>
+        <a href="#">Doações</a>
+        <a href="#">Saiba Mais</a>
+       
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>{{ animal.nome }}</h1>
+        </div>
+        <div class="animal-details">
+            {% if animal.foto %}
+                <img src="{{ animal.foto.url }}" alt="{{ animal.nome }}">
+            {% endif %}
+            <p><strong>Raça:</strong> {{ animal.raca }}</p>
+            <p><strong>Idade:</strong> {{ animal.idade }} anos</p>
+            <p><strong>Vacinado:</strong> {{ animal.vacinado|yesno:"Sim,Não" }}</p>
+            <p><strong>Descrição:</strong> {{ animal.descricao }}</p>
+            <a href="{% url 'lista_animais' %}" class="back-link">Voltar para a lista</a>
+        </div>
+    </div>
+</body>
+</html>
