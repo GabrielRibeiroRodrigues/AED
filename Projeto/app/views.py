@@ -17,3 +17,6 @@ def saiba_mais(request):
 
 def contato(request):
     return render(request, 'contato.html')
+
+def pagina_inicial(request):
+    return render(request, 'pagina_inicial.html')

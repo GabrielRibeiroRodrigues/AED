@@ -134,25 +134,8 @@
         </div>
     </div>
     <div class="container">
-        <div class="cards">
-            {% for animal in animais %}
-                <div class="card">
-                    {% if animal.foto %}
-                        <a href="{% url 'detalhes_animal' animal.id %}">
-                            <img src="{{ animal.foto.url }}" alt="{{ animal.nome }}">
-                        </a>
-                    {% endif %}
-                    <div class="card-body">
-                        <h2>{{ animal.nome }}</h2>
-                        <p><strong>Raça:</strong> {{ animal.raca }}</p>
-                        <p><strong>Idade:</strong> {{ animal.idade }} anos</p>
-                        <p><strong>Gênero:</strong> {{ animal.genero }}</p>
-                        <p><strong>Vacinado:</strong> {{ animal.vacinado|yesno:"Sim,Não" }}</p>
-                        <p><strong>Descrição:</strong> {{ animal.descricao }}</p>
-                        <a href="{% url 'detalhes_animal' animal.id %}">Ver Detalhes</a>
-                    </div>
-                </div>
-            {% endfor %}
+        
+           
         </div>
     </div>
 </body>

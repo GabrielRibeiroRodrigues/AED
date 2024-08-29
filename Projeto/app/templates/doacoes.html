@@ -140,6 +140,9 @@
     margin-left: auto;
     margin-right: auto;
 }
+.tit{
+    text-align: center;
+}
 
     </style>
 </head>
@@ -149,7 +152,7 @@
             <img src="{% static 'app/images/logo.png' %}" alt="Logo">
         </div>
         <div class="menu">
-            <a href="#">Página inicial</a>
+            <a href="pagina_inicial">Página inicial</a>
             <a href="{% url 'lista_animais' %}">Lista de Animais</a>
             <a href="{% url 'doacoes' %}">Doações</a>
             <a href="{% url 'saiba_mais' %}">Saiba Mais</a>
@@ -158,7 +161,7 @@
     </div>
     <div class="container">
         <div class="content">
-            <h1>Faça a Diferença na Vida de um Cãozinho!</h1>
+            <div class = "tit"><h1>Faça a Diferença na Vida de um Cãozinho!</h1> </div>
             <div class="donation-info">
                 <p>No Campus Dog, acreditamos que todo cão merece amor, cuidado e um lar aconchegante. Com a sua ajuda, podemos transformar a vida de muitos peludos que precisam de nós. Aceitamos doações de ração, dinheiro, produtos de higiene, roupinhas, cobertores e casinhas. Cada contribuição é fundamental para garantir que nossos amigos de quatro patas tenham uma vida mais digna e feliz.</p>
                 <p>Ao doar, você não está apenas ajudando um cãozinho a ter suas necessidades básicas atendidas, mas também está proporcionando a ele a chance de encontrar um novo lar e uma família amorosa. Seu gesto de carinho pode ser a diferença entre um dia frio e solitário e uma vida cheia de calor e cuidado.</p>

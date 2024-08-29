@@ -3,6 +3,7 @@ from django.db import models
 class Animal(models.Model):
     nome = models.CharField(max_length=100)
     raca = models.CharField(max_length=100)
+    genero = models.CharField(max_length=100)
     idade = models.IntegerField()
     vacinado = models.BooleanField(default=False)
     descricao = models.TextField()
