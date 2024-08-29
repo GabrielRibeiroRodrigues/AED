@@ -6,6 +6,7 @@ class Animal(models.Model):
     idade = models.IntegerField()
     vacinado = models.BooleanField(default=False)
     descricao = models.TextField()
+    descricao_completa = models.TextField()
     foto = models.ImageField(upload_to='fotos_animais/')
 
     def __str__(self):
